@@ -2,11 +2,11 @@
   hosts: all
   become: yes
   tasks:
-    #- name: Disable Default Nginx
-    #  ansible.builtin.shell: dnf module disable nginx -y
+    - name: Disable Default Nginx
+      ansible.builtin.shell: dnf module disable nginx -y
 
     - name: Enable Nginx 24 version
-      ansible.builtin.shell: dnf module nginx -y
+      ansible.builtin.dnf: dnf module nginx -y
 
     - name: Install Nginx
       ansible.builtin.dnf:
