@@ -7,3 +7,7 @@
     - name: print URL
       ansible.builtin.debug:
         msg: URL - {{ URL }}
+
+
+# here in the above msg line, we have  the value starting with string URL, BUT if a value starting with a variable then we need to quote.""
+# msg: "{{ URL }}" , Must and should double quote if the value starts with variable in ansible.
