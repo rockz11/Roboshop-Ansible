@@ -15,7 +15,7 @@
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
 
-<<<<<<< HEAD
+
 - name: Clean up old application directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
