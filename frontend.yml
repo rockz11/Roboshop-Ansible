@@ -3,14 +3,14 @@
   become: yes
   tasks:
     - name: Disable Default Nginx
-      ansible.builtin.shell: dnf module disable nginx -y
+      ansible.builtin.shell: shell module disable nginx -y
 
     - name: Enable Nginx 24 version
-      ansible.builtin.shell: dnf module nginx -y
+      ansible.builtin.shell: shell module enable nginx:1.24 -y
 
     - name: Install Nginx
-      ansible.builtin.shell:
-        name: Nginx
+      ansible.builtin.dnf:
+        name: nginx
         state: present
 
     - name: Copy nginx config file
@@ -18,7 +18,7 @@
         src: nginx.conf
         dest: /etc/nginx/nginx.conf
 
-    - name: start nginx
+    - name: Start nginx
       ansible.builtin.systemd_service:
         name: nginx
         state: started
