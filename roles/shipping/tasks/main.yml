@@ -1,0 +1,8 @@
+- name: Set Prompt
+  ansible.builtin.shell: set-prompt {{ App_name }}-{{ env }}
+
+- name: Load Maven
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: maven
+
