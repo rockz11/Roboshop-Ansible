@@ -15,6 +15,7 @@
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
 
+<<<<<<< HEAD
 - name: Clean up old application directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
@@ -34,3 +35,9 @@
   ansible.builtin.systemd_service:
     name: nginx
     state: restarted
+=======
+- name: Start nginx
+  ansible.builtin.systemd_service:
+    name: nginx
+    state: started
+>>>>>>> f81aa855f1b3b27dafa259ccf359c6a8ef7f70b8
